@@ -5,6 +5,7 @@
         <div class="todos">
             <div v-for="todo in allTodos" :key="todo.id" class="todo">
                 {{ todo.title }}
+                <button class="delete" @click="deleteTodo(todo.id)">Delete</button>
             </div>
         </div>
     </div>
@@ -27,7 +28,7 @@ export default {
     computed: mapGetters(['allTodos']),
 
     methods: {
-        ...mapActions(['fetchTodos'])
+        ...mapActions(['fetchTodos', 'deleteTodo'])
     },
 }
 </script>
@@ -47,5 +48,12 @@ export default {
     position: relative;
     background: #41b883;
     border: 1px solid #ccc;
+}
+
+.delete {
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    position: absolute;
 }
 </style>
