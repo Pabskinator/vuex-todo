@@ -5,8 +5,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  props: [],
+  name: "Todos",
+
+  computed: mapGetters(['allTodos']),
 
   data() {
     return {}
