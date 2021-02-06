@@ -15,7 +15,6 @@ import { mapActions } from 'vuex';
 
 export default {
     name: "AddTodo",
-    props: [],
 
     data() {
         return {
